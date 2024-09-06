@@ -10,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
 @CrossOrigin("http://localhost:5173")
 @RequestMapping("/api/quizzes")
-@RequiredArgsConstructor
 @RestController
 public class QuizController {
 
@@ -58,7 +58,8 @@ public class QuizController {
 
     @PostMapping("/submit")
     public ResponseEntity<?> submitQuiz(@RequestBody QuizResult quizResult) {
-        quizResultRepository.save(quizResult);
+        quizResult.setTestDate(LocalDateTime.now());
+        quizService.saveQuizResult(quizResult);
         return ResponseEntity.ok("Quiz submitted successfully!");
     }
 

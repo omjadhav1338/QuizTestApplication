@@ -27,8 +27,12 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/api/save-student", "/api/login", "/api/student","/api/quizzes/**", "/api/subjects/**").permitAll()
-                                .anyRequest().authenticated()
+                        .requestMatchers("/api/save-student", "/api/login", "/api/student",
+                                "/api/get-student-by-id", "/api/quizzes/**", "/api/subjects/**",
+                                "/student/result/**", "/api/forgot-password", "/api/sendmail",
+                                "/api/get-students", "/api/notes/**", "/api/reset-password",
+                                "/api/sendsignupmail", "/api/delete-student").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .userDetailsService(customUserDetailsService)
                 .build();
