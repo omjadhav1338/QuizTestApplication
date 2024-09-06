@@ -13,7 +13,6 @@ public class QuizResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quizId;
     private String studentEmail;
     private String subject;
     private Long questionCount;
@@ -46,7 +45,6 @@ public class QuizResult {
 
     public QuizResult(Long id, Long quizId, String studentEmail, Integer score, LocalDateTime testDate) {
         this.id = id;
-        this.quizId = quizId;
         this.studentEmail = studentEmail;
         this.score = score;
         this.testDate = testDate;
@@ -59,14 +57,6 @@ public class QuizResult {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getQuizId() {
-        return quizId;
-    }
-
-    public void setQuizId(Long quizId) {
-        this.quizId = quizId;
     }
 
     public String getStudentEmail() {

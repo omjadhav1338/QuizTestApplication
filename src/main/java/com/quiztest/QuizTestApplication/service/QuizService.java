@@ -48,8 +48,11 @@ public class QuizService{
     public List<Quiz> getRandomQuizzes(String subject, int limit) {
         return quizRepository.findRandomQuizzesBySubject(subject, limit);
     }
-
     public List<Quiz> getQuizzesBySubject(String subject, int limit) {
         return quizRepository.findQuizzesBySubject(subject, limit);
     }
+
+//    public List<Quiz> getResultDetailById(Long resultID){
+//        return quizRepository.findResultDetailById();
+//    }
 }
