@@ -12,6 +12,6 @@ public class QuizResultDTO {
     private String studentEmail;
     private String subject;
     private Long questionCount;
-    private String answerDetails;  // Store answer details as JSON string
+    private String answerDetails;
     private Long score;
 }

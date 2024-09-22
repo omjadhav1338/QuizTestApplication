@@ -1,13 +1,15 @@
 package com.quiztest.QuizTestApplication.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.w3c.dom.Text;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 public class QuizResult {
 
     @Id
@@ -16,80 +18,10 @@ public class QuizResult {
     private Long quizId;
     private String studentEmail;
     private String subject;
+    @Column(columnDefinition = "TEXT")
+    private String answerDetails;
     private Long questionCount;
-
-    public Long getQuestionCount() {
-        return questionCount;
-    }
-
-    public void setQuestionCount(Long questionCount) {
-        this.questionCount = questionCount;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    private int score;
+    private Long score;
     private LocalDateTime testDate;
 
-    public QuizResult() {
-    }
-
-    public QuizResult(Long id, Long quizId, String studentEmail, Integer score, LocalDateTime testDate) {
-        this.id = id;
-        this.quizId = quizId;
-        this.studentEmail = studentEmail;
-        this.score = score;
-        this.testDate = testDate;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getQuizId() {
-        return quizId;
-    }
-
-    public void setQuizId(Long quizId) {
-        this.quizId = quizId;
-    }
-
-    public String getStudentEmail() {
-        return studentEmail;
-    }
-
-    public void setStudentEmail(String studentEmail) {
-        this.studentEmail = studentEmail;
-    }
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
-
-    public LocalDateTime getTestDate() {
-        return testDate;
-    }
-
-    public void setTestDate(LocalDateTime testDate) {
-        this.testDate = testDate;
-    }
 }
