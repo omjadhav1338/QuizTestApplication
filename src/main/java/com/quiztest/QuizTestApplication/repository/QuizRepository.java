@@ -17,5 +17,4 @@ public interface QuizRepository extends JpaRepository <Quiz, Long> {
 
     @Query(value = "SELECT * FROM Quiz q WHERE q.subject = :subject LIMIT :limit", nativeQuery = true)
     List<Quiz> findQuizzesBySubject(@Param("subject") String subject, @Param("limit") int limit);
-
 }
