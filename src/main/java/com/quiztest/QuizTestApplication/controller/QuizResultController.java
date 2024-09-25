@@ -39,4 +39,5 @@ public class QuizResultController {
         Optional<QuizResult> quizResult = quizService.getResultsByID(id);
         return ResponseEntity.ok(quizResult);
     }
+
 }

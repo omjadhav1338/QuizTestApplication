@@ -66,4 +66,5 @@ public class QuizService{
     public Optional<QuizResult> getResultsByID(Long id) {
         return quizResultRepository.findById(id);
     }
+
 }
